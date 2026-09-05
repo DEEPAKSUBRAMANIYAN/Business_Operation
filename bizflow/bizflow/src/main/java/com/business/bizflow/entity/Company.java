@@ -3,7 +3,6 @@ package com.business.bizflow.entity;
 import com.business.bizflow.enums.BusinessType;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
-import com.business.bizflow.enums.Role;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
