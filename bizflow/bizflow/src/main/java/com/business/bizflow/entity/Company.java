@@ -44,10 +44,10 @@ public class Company {
     LocalDateTime now = LocalDateTime.now();
     createdAt = now;
     updatedAt = now;
-}
+   }
 
     @PreUpdate
     protected void onUpdate() {
     updatedAt = LocalDateTime.now();
-} 
+    } 
 }
