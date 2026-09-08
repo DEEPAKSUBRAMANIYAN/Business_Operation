@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BizFlow App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/bizflow/frontend/css/nav_screen_style.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="brand">
+          <div class="brand-logo">
+            <i data-lucide="zap"></i>
+          </div>
+          <span class="brand-name">BizFlow</span>
+        </div>
+        <button class="icon-btn" aria-label="Switch workspace">
+          <i data-lucide="chevrons-up-down"></i>
+        </button>
+      </div>
+
+      <!-- Tenant / Branch Dropdown -->
+      <div class="tenant-selector-wrapper">
+        <button class="tenant-btn">
+          <div class="tenant-info">
+            <i data-lucide="store"></i>
+            <span>Sunrise Traders</span>
+          </div>
+          <i data-lucide="chevron-down" class="dropdown-icon"></i>
+        </button>
+      </div>
+
+      <!-- Navigation Groups with data-page attributes -->
+      <nav class="nav-container">
+        <div class="nav-group">
+          <span class="nav-label">OVERVIEW</span>
+          <a href="#dashboard" class="nav-link active" data-page="dashboard">
+            <i data-lucide="layout-grid"></i>
+            <span>Dashboard</span>
+          </a>
+        </div>
+
+        <div class="nav-group">
+          <span class="nav-label">BUSINESS</span>
+          <a href="#customers" class="nav-link" data-page="customers">
+            <i data-lucide="users"></i>
+            <span>Customers</span>
+          </a>
+          <a href="#suppliers" class="nav-link" data-page="suppliers">
+            <i data-lucide="building-2"></i>
+            <span>Suppliers</span>
+          </a>
+          <a href="#products" class="nav-link" data-page="products">
+            <i data-lucide="package"></i>
+            <span>Products</span>
+          </a>
+        </div>
+
+        <div class="nav-group">
+          <span class="nav-label">OPERATIONS</span>
+          <a href="#inventory" class="nav-link" data-page="inventory">
+            <i data-lucide="layers"></i>
+            <span>Inventory</span>
+          </a>
+          <a href="#sales" class="nav-link" data-page="sales">
+            <i data-lucide="trending-up"></i>
+            <span>Sales</span>
+          </a>
+          <a href="#invoices" class="nav-link" data-page="invoices">
+            <i data-lucide="file-text"></i>
+            <span>Invoices</span>
+          </a>
+        </div>
+
+        <div class="nav-group">
+          <span class="nav-label">FINANCE</span>
+          <a href="#payments" class="nav-link" data-page="payments">
+            <i data-lucide="credit-card"></i>
+            <span>Payments</span>
+          </a>
+          <a href="#expenses" class="nav-link" data-page="expenses">
+            <i data-lucide="receipt"></i>
+            <span>Expenses</span>
+          </a>
+        </div>
+
+        <div class="nav-group">
+          <span class="nav-label">HR</span>
+          <a href="#employees" class="nav-link" data-page="employees">
+            <i data-lucide="user-check"></i>
+            <span>Employees</span>
+          </a>
+        </div>
+
+        <div class="nav-group">
+          <span class="nav-label">REPORTS</span>
+          <a href="#reports" class="nav-link" data-page="reports">
+            <i data-lucide="file-bar-chart-2"></i>
+            <span>Reports</span>
+          </a>
+          <a href="#analytics" class="nav-link" data-page="analytics">
+            <i data-lucide="line-chart"></i>
+            <span>Analytics</span>
+          </a>
+        </div>
+
+        <div class="nav-group">
+          <span class="nav-label">SYSTEM</span>
+          <a href="#settings" class="nav-link" data-page="settings">
+            <i data-lucide="settings"></i>
+            <span>Settings</span>
+          </a>
+          <a href="#auditlogs" class="nav-link" data-page="auditlogs">
+            <i data-lucide="file-check-2"></i>
+            <span>Audit Logs</span>
+          </a>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- Main Viewport -->
+    <div class="main-wrapper">
+      <header class="top-header">
+        <nav class="breadcrumb">
+          <a href="#" class="crumb-parent">Workspace</a>
+          <i data-lucide="chevron-right" class="crumb-separator"></i>
+          <span class="crumb-current" id="active-crumb">Dashboard</span>
+        </nav>
+
+        <div class="search-container">
+          <i data-lucide="search" class="search-icon"></i>
+          <input
+            type="search"
+            placeholder="Search customers, invoices, products..."
+            class="search-input"
+          />
+        </div>
+
+        <div class="header-actions">
+          <button class="notif-btn" aria-label="Notifications">
+            <i data-lucide="bell"></i>
+            <span class="notif-badge">3</span>
+          </button>
+          <button class="user-btn">
+            <div class="user-avatar">
+              <i data-lucide="user"></i>
+            </div>
+            <span class="user-name">Marcus Vance</span>
+            <i data-lucide="chevron-down" class="dropdown-icon"></i>
+          </button>
+        </div>
+      </header>
+
+      <!-- Main Empty Canvas where app.js renders views -->
+      <main class="empty-screen" id="content-area"></main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/bizflow/frontend/script/nav.js"></script>
+  </body>
+</html>

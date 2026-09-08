@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In &bull; BizFlow B2B OS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/bizflow/frontend/css/auth_style.css" />
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body>
+    <div class="auth-layout">
+      <!-- ================= LEFT BLUE PANEL ================= -->
+      <section class="visual-panel">
+        <!-- Grid Overlay Background -->
+        <div class="grid-overlay"></div>
+
+        <!-- Top Brand -->
+        <div class="brand-badge-wrapper">
+          <div class="brand-icon-box">
+            <i data-lucide="zap"></i>
+          </div>
+          <div class="brand-text-group">
+            <div class="brand-heading">
+              <span class="brand-title">BizFlow</span>
+              <span class="badge-b2b">B2B OS</span>
+            </div>
+            <p class="brand-sub">Enterprise Business Operations</p>
+          </div>
+        </div>
+
+        <!-- Floating Glassmorphism Cards Showcase -->
+        <div class="cards-showcase">
+          <!-- Card 1: Live Cashflow Flow -->
+          <div class="glass-card card-cashflow">
+            <div class="card-cashflow-header">
+              <div class="live-dot-tag">
+                <span class="green-indicator"></span>
+                <span>LIVE CASHFLOW FLOW</span>
+              </div>
+              <div class="rate-badge">+28.4%</div>
+            </div>
+            <div class="card-cashflow-body">
+              <div class="cashflow-values">
+                <h3 class="amount-val">$142,850.00</h3>
+                <p class="amount-sub">Across 14 active client accounts</p>
+              </div>
+              <div class="mini-bar-chart">
+                <span class="bar bar-1"></span>
+                <span class="bar bar-2"></span>
+                <span class="bar bar-3"></span>
+                <span class="bar bar-4"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Invoice Synced -->
+          <div class="glass-card card-invoice">
+            <div class="invoice-top-row">
+              <div class="invoice-meta">
+                <div class="invoice-icon">
+                  <i data-lucide="file-text"></i>
+                </div>
+                <div class="invoice-title-grp">
+                  <h4>Invoice #INV-2025-089</h4>
+                  <p>Apex Retail Partners &bull; Net 30</p>
+                </div>
+              </div>
+              <span class="automated-pill">Automated</span>
+            </div>
+            <div class="invoice-status-grid">
+              <div class="status-col">
+                <span class="status-lbl">INVENTORY</span>
+                <strong class="status-txt">Synchronized</strong>
+              </div>
+              <div class="status-col">
+                <span class="status-lbl">LEDGER</span>
+                <strong class="status-txt">Reconciled</strong>
+              </div>
+              <div class="status-col">
+                <span class="status-lbl">PAYOUT</span>
+                <strong class="status-txt status-payout">$8,420.00</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Operations Team -->
+          <div class="glass-card card-team">
+            <div class="team-avatars">
+              <span class="avatar av-1">MK</span>
+              <span class="avatar av-2">SL</span>
+              <span class="avatar av-3">DR</span>
+            </div>
+            <div class="team-info">
+              <h5>Operations Team</h5>
+              <p>All 3 shifts rostered today</p>
+            </div>
+            <div class="active-badge">
+              <span class="blue-dot"></span>
+              <span>Active</span>
+            </div>
+          </div>
+
+          <!-- Quote -->
+          <div class="quote-wrapper">
+            <blockquote class="quote-text">
+              &ldquo;Manage your entire business from one place.&rdquo;
+            </blockquote>
+            <p class="quote-sub">
+              Customers, inventory, payroll, and invoicing in real time.
+            </p>
+          </div>
+        </div>
+
+        <!-- Bottom Trust Bar -->
+        <div class="trust-footer">
+          <div class="stars-proof">
+            <div class="stars-row">
+              <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span
+              ><span>&#9733;</span><span>&#9733;</span>
+            </div>
+            <span class="proof-text">Trusted by 2,000+ small businesses</span>
+          </div>
+          <div class="compliance-text">SOC2 Type II &bull; 99.99% Uptime</div>
+        </div>
+      </section>
+
+      <!-- ================= RIGHT LOGIN FORM PANEL ================= -->
+      <main class="form-panel">
+        <!-- Top Status Header -->
+        <header class="form-top-bar">
+          <div class="system-status">
+            <span class="status-circle"></span>
+            <span>System Operational</span>
+          </div>
+          <a href="#" class="help-link">Need help?</a>
+        </header>
+
+        <!-- Center Form Content -->
+        <div class="form-center-wrapper">
+          <div class="form-header">
+            <h1 class="heading-title">Welcome back</h1>
+            <p class="heading-subtitle">Sign in to your BizFlow account</p>
+          </div>
+
+          <!-- Notification Banner for dynamic state test -->
+          <div id="error-banner" class="banner banner-error hidden">
+            <i data-lucide="alert-circle"></i>
+            <span id="error-message"
+              >Invalid email or password combination.</span
+            >
+          </div>
+
+          <form id="login-form" class="auth-form" novalidate>
+            <!-- Email Input -->
+            <div class="form-field">
+              <label for="email" class="field-label">EMAIL ADDRESS</label>
+              <div class="input-wrapper">
+                <i data-lucide="at-sign" class="field-icon"></i>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value="marcus.vance@apexretail.com"
+                  autocomplete="email"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Password Input -->
+            <div class="form-field">
+              <label for="password" class="field-label">PASSWORD</label>
+              <div class="input-wrapper">
+                <i data-lucide="lock" class="field-icon"></i>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  value="correcthorsebatterystaple"
+                  autocomplete="current-password"
+                  required
+                />
+                <button
+                  type="button"
+                  id="toggle-password"
+                  class="toggle-eye"
+                  aria-label="Toggle password visibility"
+                >
+                  <i data-lucide="eye" id="eye-icon"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Options: Remember & Forgot -->
+            <div class="form-options">
+              <label class="checkbox-container">
+                <input type="checkbox" id="remember" checked />
+                <span class="checkmark"></span>
+                <span class="checkbox-label">Remember me</span>
+              </label>
+              <a href="#" class="forgot-link">Forgot password?</a>
+            </div>
+
+            <!-- Primary Submit Button -->
+            <button type="submit" id="btn-submit" class="btn-primary">
+              <span class="btn-text">Sign In</span>
+              <div class="spinner hidden" id="spinner"></div>
+            </button>
+
+            <!-- Divider -->
+            <div class="form-divider">
+              <span class="divider-line"></span>
+              <span class="divider-text">OR</span>
+              <span class="divider-line"></span>
+            </div>
+
+            <!-- SSO Button -->
+            <button type="button" class="btn-secondary">
+              <i data-lucide="door-closed" class="sso-icon"></i>
+              <span>Sign in with Company SSO (SAML)</span>
+            </button>
+          </form>
+
+          <!-- Form Footer Link -->
+          <p class="admin-notice">
+            Don&rsquo;t have an account?
+            <a href="#" class="admin-link">Contact your administrator</a>
+          </p>
+
+          <!-- Preview State Controls (Interactive toggles) -->
+          <div class="preview-state-row">
+            <span class="preview-lbl">Preview states:</span>
+            <button type="button" id="toggle-error-state" class="state-pill">
+              Toggle Error
+            </button>
+            <button type="button" id="toggle-loading-state" class="state-pill">
+              Toggle Loading
+            </button>
+          </div>
+        </div>
+
+        <!-- Legal Footer -->
+        <footer class="legal-footer">
+          <span>&copy; 2025 BizFlow. All rights reserved.</span>
+          <span class="legal-sep">&bull;</span>
+          <a href="#">Privacy Policy</a>
+          <span class="legal-sep">&bull;</span>
+          <a href="#">Terms of Service</a>
+        </footer>
+      </main>
+    </div>
+
+    <script src="/bizflow/frontend/script/auth.js"></script>
+  </body>
+</html>
