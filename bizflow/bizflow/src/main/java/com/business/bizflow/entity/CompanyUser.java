@@ -1,19 +1,33 @@
 package com.business.bizflow.entity;
 
-import java.time.LocalDateTime;
-
 import com.business.bizflow.enums.Role;
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
 @Entity
-@Table(name = "company_users",
- uniqueConstraints = {
-        @UniqueConstraint(columnNames = {"user_id", "company_id"})
-    })
+@Table(
+        name = "company_users",
+        uniqueConstraints = {
+                @UniqueConstraint(columnNames = {"user_id", "company_id"})
+        }
+)
 public class CompanyUser {
 
     @Id
@@ -33,10 +47,10 @@ public class CompanyUser {
     private Role role;
 
     @Column(name = "created_at", nullable = false, updatable = false)
-private LocalDateTime createdAt;
+    private LocalDateTime createdAt;
 
-@PrePersist
-protected void onCreate() {
-    createdAt = LocalDateTime.now();
-}
+    @PrePersist
+    protected void onCreate() {
+        createdAt = LocalDateTime.now();
+    }
 }

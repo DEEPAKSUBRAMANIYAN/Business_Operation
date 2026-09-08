@@ -1,3 +1,9 @@
+const token = localStorage.getItem("jwtToken");
+if (!token) {
+  // Adjust "login.html" to your actual login file path
+  window.location.href = "login.html";
+} 
+
 const routes = {
   dashboard: {
     title: "Dashboard",
